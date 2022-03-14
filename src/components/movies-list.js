@@ -107,7 +107,7 @@ const MoviesList = (probs) => {
             <Form>
                 <Row>
                     <Col>
-                    <FormGroup>
+                    <FormGroup className='m-1'>
                         <FormControl type='text'
                         placeholder='Search by title'
                         value={searchTitle}
@@ -117,10 +117,12 @@ const MoviesList = (probs) => {
                     variant='primary'
                     type='button'
                     onClick={findByTitle}
+                    className='m-1 shadow-none'
+                    size='sm'
                     >Search</Button>
                     </Col>
                     <Col>
-                    <FormGroup>
+                    <FormGroup className='m-1'>
                         <FormControl
                             as="select" onChange={onChangeSearchRating}>
                                 {ratings.map((rating, index)=>{
@@ -134,6 +136,8 @@ const MoviesList = (probs) => {
                     variant='primary'
                     type='button'
                     onClick={findByRating}
+                    className='m-1 shadow-none'
+                    size='sm'
                     >Search</Button>
                     </Col>
                 </Row>

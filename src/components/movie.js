@@ -44,10 +44,10 @@ const Movie = (props) => {
         <Container>
             <Row>
                 <Col>
-                    <Image src={movie.poster+'/100px250'} fluid/>
+                    <Image className='m-1' src={movie.poster+'/100px250'} fluid/>
                 </Col>
                 <Col>
-                    <Card>
+                    <Card className='m-1'>
                         <Card.Header as='h5'>{movie.title}</Card.Header>
                         <Card.Body>
                             <Card.Text>

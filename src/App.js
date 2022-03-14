@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, Routes} from 'react-router-dom'
+import { Navigate, Route, Routes, Link} from 'react-router-dom'
 import {LinkContainer} from 'react-router-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css"
 import AddReview from './components/add-review';
@@ -15,6 +15,7 @@ import NavbarBrand from 'react-bootstrap/esm/NavbarBrand';
 import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 import { Image } from 'react-bootstrap';
+import Home from './components/home';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -30,7 +31,7 @@ function App() {
   <>
     <div className="App">
       <NavBar bg='light' expand= 'lg'>
-        <NavbarBrand>{" "}<Image src={logo} width='20px' className='mb-2 ms-1' height="20px"/>Flick-Review</NavbarBrand>
+        <NavbarBrand >{" "}<Link to={user?'/movies':'/'} className='text-decoration-none text-secondary' ><Image src={logo} width='20px' className='mb-2 ms-1' height="20px"/>Flick-Review</Link></NavbarBrand>
         <NavbarToggle aria-controls='basic-navbar-nav'/>
         <NavbarCollapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
@@ -46,6 +47,7 @@ function App() {
         </NavbarCollapse>
       </NavBar>
       <Routes>
+        <Route path='/' element={user? <Navigate to={"/movies"}/>: <Home/>}/>
         <Route exact path="/movies" element={<MoviesList/>}/>
         <Route path='/movies/:id/review' element={<AddReview user={user}/>}/>
         <Route path="/movies/:id/" element={<Movie user={user}/>}/>
