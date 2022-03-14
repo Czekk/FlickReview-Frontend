@@ -6,6 +6,7 @@ import AddReview from './components/add-review';
 import MoviesList from './components/movies-list';
 import Movie from './components/movie';
 import Login from './components/login';
+import logo from './Logo/icon3.gif'
 
 import Nav from 'react-bootstrap/Nav'
 import NavLink from 'react-bootstrap/esm/NavLink';
@@ -13,6 +14,7 @@ import NavBar from 'react-bootstrap/Navbar'
 import NavbarBrand from 'react-bootstrap/esm/NavbarBrand';
 import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
+import { Image } from 'react-bootstrap';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -28,7 +30,7 @@ function App() {
   <>
     <div className="App">
       <NavBar bg='light' expand= 'lg'>
-        <NavbarBrand>Flick-Review</NavbarBrand>
+        <NavbarBrand>{" "}<Image src={logo} width='20px' className='mb-2 ms-1' height="20px"/>Flick-Review</NavbarBrand>
         <NavbarToggle aria-controls='basic-navbar-nav'/>
         <NavbarCollapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
